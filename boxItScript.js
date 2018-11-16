@@ -44,7 +44,7 @@ function drawLine (longest){
 }
 
 function drawTopBorder (longest) {
-    str = '┏━'+drawLine(longest)+'━┓';
+    str = '┏━'+drawLine(longest)+'━┓'+'\n';
     return str;
 }
 
@@ -76,23 +76,22 @@ function spaceFiller (nameindex,longest){
 
 }
 
-function boxIt (filledArgs, longest){
+function boxIt (filledArgs){
 
-    console.log (drawTopBorder(longest),'\n');
-    for (let i = 0; i < filledArgs.length; i++) {
-    console.log (drawBarsAround(filledArgs,i),'\n');
-    console.log (drawMiddleBorder(longest),'\n');
-    }
-    console.log (drawBottomBorder(longest),'\n');
+    // console.log (drawTopBorder(longest),'\n');
+    // for (let i = 0; i < filledArgs.length; i++) {
+    // console.log (drawBarsAround(filledArgs,i),'\n');
+    // console.log (drawMiddleBorder(longest),'\n');
+    // }
+    // console.log (drawBottomBorder(longest),'\n');
 
     let arr = [];
     for (let i = 0 ; i < filledArgs.length; i++) {
     arr[i] = drawBarsAround(filledArgs,i) + '\n';
     }
+
+    return console.log ([drawTopBorder(longest),arr.join(drawMiddleBorder(longest)),drawBottomBorder(longest)].join(''));
     
-    console.log (drawTopBorder(longest));
-    console.log (arr.join(drawMiddleBorder(longest)));
-    console.log (drawBottomBorder(longest));
 }
 
 console.log(boxIt(spaceFiller(nameindex,longest), longest));
