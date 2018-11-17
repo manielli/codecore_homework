@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 let args = process.argv;
 let str = '';
 let nameindex = [];
@@ -90,7 +92,7 @@ function boxIt (filledArgs){
     arr[i] = drawBarsAround(filledArgs,i) + '\n';
     }
 
-    return console.log ([drawTopBorder(longest),arr.join(drawMiddleBorder(longest)),drawBottomBorder(longest)].join(''));
+    return [drawTopBorder(longest),arr.join(drawMiddleBorder(longest)),drawBottomBorder(longest)].join('');
     
 }
 
