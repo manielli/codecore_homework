@@ -25,7 +25,7 @@ const StringExtras = {
     
     },
     
-    };
+};
 
 for ( let i = 0; i < args.length-2; i++) {
     nameindex[i] = args[i+2];
