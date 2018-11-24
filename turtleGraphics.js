@@ -102,7 +102,7 @@ class Turtle {
         console.log(gridX);
         console.log(gridY);
 
-        let arrayDot = Array.from({length: gridX}).fill(' • ');
+        let arrayDot = Array.from({length: gridX}).fill('   ');
         let output = {};
         for(let key = 0; key < gridY; key ++){
             output[`${key}`] = arrayDot;  
@@ -112,9 +112,11 @@ class Turtle {
 
         for (let k = 0; k < gridY; k++) {
             for (let j = 0; j < gridX; j++) {
-
-                    output[j][k] = '  '
-                
+                    for ( let l = 0; l < arr.length; l++){
+                        for (let m = 0; m < 2; m++){
+                            output[arr[l][m]][arr[l][m]] = ' • ';
+                        }
+                    }
             }
         }
 
