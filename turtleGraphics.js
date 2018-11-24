@@ -90,19 +90,18 @@ class Turtle {
         console.log ('The turtle has been to: ', this.hasbeen);
     }
 
-    print () {
+    print() {
+        arr = this.hasbeen;
 
+        arr = arr.split();
+        console.log('The splitted array',arr);
         // trickiest, I have to use the has been data and also x and y
         // printing a big grid, using some loops
-
     }
 
 };
 
 const tedTheTurtle = new Turtle(0,0);
-tedTheTurtle.left().right().forward(3).left().forward(3).allPoints();
+tedTheTurtle.left().right().forward(3).left().forward(3).allPoints().print();
 // const samTheTurtle = new Turtle(2,3);
 // const johnTheTurtle = new Turtle(5,5);
-
-
-// console.log('Results',turtle1.forward(3));
