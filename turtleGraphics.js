@@ -109,13 +109,11 @@ class Turtle {
         };
 
         console.log(output);
-
+        let n = 1 ;
         for (let k = 0; k < gridY; k++) {
             for (let j = 0; j < gridX; j++) {
                     for ( let l = 0; l < arr.length; l++){
-                        for (let m = 0; m < 2; m++){
-                            output[arr[l][m]][arr[l][m]] = ' • ';
-                        }
+                            output[arr[l][0]][arr[l][1]] = ' • ';
                     }
             }
         }
