@@ -18,31 +18,32 @@ class Turtle {
             switch (this.direction) {
                 case 'east':
                     this.x += 1;
-                    this.y = y;
-                    this.hasbeen = hasbeen.push([this.x,this.y]);
+                    // this.y = y;
+                    this.hasbeen.push([this.x,this.y]);
                     this.direction = 'east';
                     break;
                 case 'north':
-                    this.x = x;
+                    // this.x = x;
                     this.y += 1;
                     this.direction = 'north';
-                    this.hasbeen = hasbeen.push([this.x,this.y]);
+                    this.hasbeen.push([this.x,this.y]);
                     break;
                 case 'west':
                     this.x -= 1;
-                    this.y = y;
+                    // this.y = y;
                     this.direction = 'west';
-                    this.hasbeen = hasbeen.push([this.x,this.y]);
+                    this.hasbeen.push([this.x,this.y]);
                   break;
                 default:
-                    this.x = x;
+                    // this.x = x;
                     this.y -= 1;
                     this.direction = 'south';
-                    this.hasbeen = hasbeen.push([this.x,this.y]);
+                    this.hasbeen.push([this.x,this.y]);
                   break;
               }
 
         }
+        return this;
 
         // for has been push into it all location that has been
         // return `${this.x},${this.y}`;
@@ -63,6 +64,7 @@ class Turtle {
                 this.direction = 'east'
               break;
           }
+          return this;
     }
 
     right () {
@@ -81,11 +83,11 @@ class Turtle {
                 this.direction = 'east'
               break;
           }
+          return this;
     }
     
     allPoints () {
-        this.hasbeen = hasbeen;
-        // pretty easy just using has been which already all the points stored
+        console.log ('The turtle has been to: ', this.hasbeen);
     }
 
     print () {
@@ -98,8 +100,9 @@ class Turtle {
 };
 
 const tedTheTurtle = new Turtle(0,0);
-const samTheTurtle = new Turtle(2,3);
-const johnTheTurtle = new Turtle(5,5);
+tedTheTurtle.left().right().forward(3).left().forward(3).allPoints();
+// const samTheTurtle = new Turtle(2,3);
+// const johnTheTurtle = new Turtle(5,5);
 
 
 // console.log('Results',turtle1.forward(3));
