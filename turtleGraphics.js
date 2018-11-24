@@ -109,7 +109,7 @@ class Turtle {
         };
 
         console.log(output);
-        let n = 1 ;
+        
         for (let k = 0; k < gridY; k++) {
             for (let j = 0; j < gridX; j++) {
                     for ( let l = 0; l < arr.length; l++){
