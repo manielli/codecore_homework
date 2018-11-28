@@ -146,7 +146,7 @@ class Turtle {
             for ( let m = gridXmin; m <= gridXmax; m++) {
 
                 for ( let n = gridYmin; n <= gridYmax; n++) {
-                    console.log(output[`${m}`][n];
+                    console.log(output[`${m}`][n]);
                 }
             }
 
