@@ -87,7 +87,7 @@ class Turtle {
 
     print() {
         let arr = this.hasbeen;
-        console.log('The length of hasbeen array is ', arr.length);
+        // console.log('The length of hasbeen array is ', arr.length);
 
         let arrX = [];
         let arrY = [];
@@ -96,43 +96,70 @@ class Turtle {
             arrX.push(parseInt(arr[i][0]));
             arrY.push(parseInt(arr[i][1]));
         }
-        console.log(Math.abs(Math.max(...arrX)));
-        console.log(Math.abs(Math.min(...arrX)));
-        console.log(Math.abs(Math.max(...arrY)));
-        console.log(Math.abs(Math.min(...arrY)));
-        let gridX = Math.abs(Math.max(...arrX)) + Math.abs(Math.min(...arrX));
-        let gridY = Math.abs(Math.max(...arrY)) + Math.abs(Math.min(...arrY));
+        // console.log(Math.abs(Math.max(...arrX)));
+        // console.log(Math.abs(Math.min(...arrX)));
+        // console.log(Math.abs(Math.max(...arrY)));
+        // console.log(Math.abs(Math.min(...arrY)));
+        // let gridX = Math.abs(Math.max(...arrX)) + Math.abs(Math.min(...arrX));
+        // let gridY = Math.abs(Math.max(...arrY)) + Math.abs(Math.min(...arrY));
+        let gridX = Math.max(...arrX) - Math.min(...arrX);
+        let gridY = Math.max(...arrY) - Math.min(...arrY);
+        let gridXmax = Math.max(...arrX);
+        let gridXmin = Math.min(...arrX);
+        let gridYmax = Math.max(...arrY);
+        let gridYmin = Math.min(...arrY);
 
-        console.log(gridX);
-        console.log(gridY);
-        let arraySpaces = [];
+        // console.log(gridXmin);
+        // console.log(gridXmax);
+        // console.log(gridYmin);
+        // console.log(gridYmax);
 
-        for (let l = 0; l < gridY+1; l++ ){
-        arraySpaces[l] = Array.from({length: gridX+1}).fill(' ');
-        }
+        // console.log(gridX);
+        // console.log(gridY);
+        // let arraySpaces = [];
+
+        // for (let l = 0 ; l < gridY+1; l++ ){
+        // arraySpaces[l] = Array.from({length: gridX+1}).fill(' ');
+        // }
 
         let output = {};
-        for(let key = 0; key < gridY+1; key ++){
-            output[`${key}`] = arraySpaces[key];  
-        };
+        if (gridYmin < 0) {
+            for(let key = gridYmin ; key <= gridYmax; key ++){
+                output[`${key}`] = Array.from({length: gridX}).fill('   ');  
+            };
+        } else {
+            for(let key = 0 ; key <= gridYmax; key ++){
+                output[`${key}`] = Array.from({length: gridX}).fill('   ');  
+            };
+        }
 
         // console.log(output);
         
             for ( let l = 0; l < arr.length ; l++){
-                output[`${arr[l][0]}`][arr[l][1]] = '•';
+                // console.log('Loop number:',l);
+                output[`${arr[l][0]}`][arr[l][1]] = ' • ';
+                // console.log(output);
             }
         
-        console.log(output);
+        // console.log(output);
+
+            for ( let m = gridXmin; m <= gridXmax; m++) {
+
+                for ( let n = gridYmin; n <= gridYmax; n++) {
+                    console.log(output[`${m}`][n];
+                }
+            }
 
     }
 
 };
 
 const tedTheTurtle = new Turtle(0, 0);
-// const samTheTurtle = new Turtle(1,1);
-tedTheTurtle.forward(6).left().forward(6).left().forward(12).left().forward(6).left().forward(6).allPoints();
-tedTheTurtle.print();
-// samTheTurtle.forward(6).left().forward(6).left().forward(6).left().forward(6).allPoints();
-// samTheTurtle.print();
-// const samTheTurtle = new Turtle(2,3);
-// const johnTheTurtle = new Turtle(5,5);
+const samTheTurtle = new Turtle(2,3);
+const johnTheTurtle = new Turtle(5,5);
+// tedTheTurtle.forward(3).left().forward(3).left().forward(3).left().forward(3).allPoints();
+// tedTheTurtle.print();
+samTheTurtle.forward(3).left().forward(3).left().forward(3).left().forward(3).allPoints();
+samTheTurtle.print();
+johnTheTurtle.forward(5).left().forward(5).left().forward(5).left().forward(5).allPoints();
+johnTheTurtle.print();
