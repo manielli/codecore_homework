@@ -96,38 +96,43 @@ class Turtle {
             arrX.push(parseInt(arr[i][0]));
             arrY.push(parseInt(arr[i][1]));
         }
-        let gridX = Math.max(...arrX) - Math.min(...arrX);
-        let gridY = Math.max(...arrY) - Math.min(...arrY);
+        console.log(Math.abs(Math.max(...arrX)));
+        console.log(Math.abs(Math.min(...arrX)));
+        console.log(Math.abs(Math.max(...arrY)));
+        console.log(Math.abs(Math.min(...arrY)));
+        let gridX = Math.abs(Math.max(...arrX)) + Math.abs(Math.min(...arrX));
+        let gridY = Math.abs(Math.max(...arrY)) + Math.abs(Math.min(...arrY));
 
         console.log(gridX);
         console.log(gridY);
+        let arraySpaces = [];
 
-        let arrayDot = Array.from({length: gridX}).fill('   ');
-        let output = {};
-        for(let key = 0; key < gridY; key ++){
-            output[`${key}`] = arrayDot;  
-        };
-
-        console.log(output);
-        
-        for (let k = 0; k < gridY; k++) {
-            for (let j = 0; j < gridX; j++) {
-                    for ( let l = 0; l < arr.length; l++){
-                            output[arr[l][0]][arr[l][1]] = ' • ';
-                    }
-            }
+        for (let l = 0; l < gridY+1; l++ ){
+        arraySpaces[l] = Array.from({length: gridX+1}).fill(' ');
         }
 
+        let output = {};
+        for(let key = 0; key < gridY+1; key ++){
+            output[`${key}`] = arraySpaces[key];  
+        };
+
+        // console.log(output);
+        
+            for ( let l = 0; l < arr.length ; l++){
+                output[`${arr[l][0]}`][arr[l][1]] = '•';
+            }
+        
         console.log(output);
-
-
 
     }
 
 };
 
 const tedTheTurtle = new Turtle(0, 0);
-tedTheTurtle.forward(6).left().forward(6).left().forward(6).left().forward(6).allPoints();
+// const samTheTurtle = new Turtle(1,1);
+tedTheTurtle.forward(6).left().forward(6).left().forward(12).left().forward(6).left().forward(6).allPoints();
 tedTheTurtle.print();
+// samTheTurtle.forward(6).left().forward(6).left().forward(6).left().forward(6).allPoints();
+// samTheTurtle.print();
 // const samTheTurtle = new Turtle(2,3);
 // const johnTheTurtle = new Turtle(5,5);
