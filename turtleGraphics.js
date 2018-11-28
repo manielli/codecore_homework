@@ -125,11 +125,11 @@ class Turtle {
         let output = {};
         if (gridYmin < 0) {
             for(let key = gridYmin ; key <= gridYmax; key ++){
-                output[`${key}`] = Array.from({length: gridX}).fill('   ');  
+                output[`${key}`] = Array.from({length: gridX}).fill(' ');  
             };
         } else {
             for(let key = 0 ; key <= gridYmax; key ++){
-                output[`${key}`] = Array.from({length: gridX}).fill('   ');  
+                output[`${key}`] = Array.from({length: gridX}).fill(' ');  
             };
         }
 
@@ -137,16 +137,21 @@ class Turtle {
         
             for ( let l = 0; l < arr.length ; l++){
                 // console.log('Loop number:',l);
-                output[`${arr[l][0]}`][arr[l][1]] = ' • ';
+                output[`${arr[l][0]}`][arr[l][1]] = '•';
                 // console.log(output);
             }
         
-        // console.log(output);
+        console.log(output);
+        console.log('****************************************');
+        console.log('****************************************');
+        console.log('****************************************');
+        console.log('****************************************');
+        console.log('****************************************\n');
 
             for ( let m = gridXmin; m <= gridXmax; m++) {
-
+                    
                 for ( let n = gridYmin; n <= gridYmax; n++) {
-                    console.log(output[`${m}`][n]);
+                    // console.log(output[`${m}`][n]);
                 }
             }
 
