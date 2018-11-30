@@ -1,1 +1,1 @@
-This is the readme file for the codecore homework due Friday 16th.
+This is the readme file for the codecore homeworks.
