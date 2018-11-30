@@ -141,19 +141,20 @@ class Turtle {
                 // console.log(output);
             }
         
-        console.log(output);
+
         console.log('****************************************');
         console.log('****************************************');
         console.log('****************************************');
         console.log('****************************************');
         console.log('****************************************\n');
-
-            for ( let m = gridXmin; m <= gridXmax; m++) {
+        console.log(output);
+        
+            // for ( let m = gridXmin; m <= gridXmax; m++) {
                     
-                for ( let n = gridYmin; n <= gridYmax; n++) {
-                    // console.log(output[`${m}`][n]);
-                }
-            }
+            //     for ( let n = gridYmin; n <= gridYmax; n++) {
+            //         // console.log(output[`${m}`][n]);
+            //     }
+            // }
 
     }
 
@@ -162,8 +163,8 @@ class Turtle {
 const tedTheTurtle = new Turtle(0, 0);
 const samTheTurtle = new Turtle(2,3);
 const johnTheTurtle = new Turtle(5,5);
-// tedTheTurtle.forward(3).left().forward(3).left().forward(3).left().forward(3).allPoints();
-// tedTheTurtle.print();
+tedTheTurtle.forward(3).left().forward(3).left().forward(3).left().forward(3).allPoints();
+tedTheTurtle.print();
 samTheTurtle.forward(3).left().forward(3).left().forward(3).left().forward(3).allPoints();
 samTheTurtle.print();
 johnTheTurtle.forward(5).left().forward(5).left().forward(5).left().forward(5).allPoints();
