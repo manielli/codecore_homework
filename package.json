@@ -1,0 +1,30 @@
+{
+  "name": "super-team-picker-week-4-homework",
+  "version": "0.0.1",
+  "description": "Super Team Picker improvement for cohorts",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manielli/codecore_homework.git"
+  },
+  "keywords": [
+    "CodeCore"
+  ],
+  "author": "Mani Jafari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manielli/codecore_homework/issues"
+  },
+  "homepage": "https://github.com/manielli/codecore_homework#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.7"
+  },
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1"
+  }
+}
