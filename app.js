@@ -11,6 +11,12 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(express.urlencoded({ extended: true}));
 
+const baseRouter = require("./routes/base");
+const postsRouter = require("./routes/posts");
+
+app.use("/", baseRouter);
+app.use("/posts", postsRouter);
+
 const PORT = 5050;
 const HOST = "localhost"; // 127.0.0.1
 app.listen(PORT, HOST, () => {
