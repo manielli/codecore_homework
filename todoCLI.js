@@ -74,4 +74,3 @@ function markCompleted (completedItem) {
 
     });
 }
-
