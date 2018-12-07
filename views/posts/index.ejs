@@ -1,5 +1,26 @@
-<%- include("./partials/header") %>
+<%- include("../partials/header") %>
 
-<h4>List of All Cohorts</h4>
+<div class="post-cards">
+    <% for (let cohort of cohorts) { %> 
+        <div class="card mb-4">
+            <div class="card-body">
+                <% if (cohort.logo_url) { %> 
+                <img 
+                    src="<%= cohort.logo_url %>" 
+                    alt="Cohort Logo" 
+                    class="card-img-top"
+                >
+                <% } %>
+                <h5 class="card-title"><%= cohort.name %></h5>
+            </div>
+            <p class="card-text"><%= cohort.members %></p>
+            <a href="/posts/<%= cohort.id %>" 
+            class="d-flex btn btn-outline-primary mr-2"
+            >
+            Show Cohort
+            </a>
+        </div>        
+    <% } %>
+</div>
 
-<% include("./partials/footer") %>
+<% include("../partials/footer") %>

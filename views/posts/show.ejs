@@ -1,0 +1,31 @@
+<%- include("../partials/header") %>
+
+<div class="card mb-4">
+
+    <div class="card-body">
+        <h4 class="card-title"><%= cohort.name %></h4>
+        <p class="card-text">
+            <%= cohort.members %><br>
+        </p>
+
+        <div class="d-flex">
+
+        <div>Method</div>
+        <span placeholder="Quantity"></span>
+        <button type="submit" value="Assign Teams"></button>
+
+        <!--    <form action="/posts/<%= cohort.id %>" method="POST">
+                <input type="hidden" name="_method" value="EDIT">
+                <input 
+                    type="submit" 
+                    class="btn btn-outline-primary"
+                    value="Edit"
+                    >
+        </form> -->
+        </div>
+    
+    </div>
+
+</div>
+
+<%- include("../partials/footer") %>
