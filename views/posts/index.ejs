@@ -1,27 +1,49 @@
 <%- include("../partials/header") %>
 
-<div class="post-cards">
+<div class="card">
     <% for (let cohort of cohorts) { %> 
-        <div class="card mb-4">
-            <a class="card-body d-flex">
+        <div class="card-body">
+            <div class="d-flex">
                 <div>
 
                 <% if (cohort.logo_url) { %> 
                 <img 
                     src="<%= cohort.logo_url %>" 
                     alt="Cohort Logo" 
-                    class="card-img-top"
+                    class="card-img"
+                    height="30"
+                    width="30"
                 >
                 <% } %>
                 </div>
-                <h5 class="card-title"><%= cohort.name %></h5>
-            </a>
+                <h4 class="card-title ml-4"><%= cohort.name %>
+                </h4>
+            </div>
             <p class="card-text"><%= cohort.members %></p>
+            <div class="d-flex">
             <a href="/posts/<%= cohort.id %>" 
-            class="btn btn-outline-primary mr-2"
+            class="btn btn-primary mr-2"
             >
             Show Cohort
             </a>
+            <form action="/posts/<%= cohort.id %>" method="POST">
+                <input type="hidden" name="_method" value="EDIT">
+                <input 
+                    type="submit" 
+                    class="btn btn-outline-primary mr-2"
+                    value="Edit"
+                >
+            </form>
+            <form action="/posts/<%= cohort.id %>" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <input
+                    type="submit"
+                    class="btn btn-outline-primary mr-2"
+                    value="Delete"
+                >   
+            </form>
+            </div>
+
         </div>        
     <% } %>
 </div>
