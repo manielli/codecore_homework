@@ -20,29 +20,12 @@
                 </h4>
             </div>
             <p class="card-text"><%= cohort.members %></p>
-            <div class="d-flex">
             <a href="/posts/<%= cohort.id %>" 
             class="btn btn-primary mr-2"
             >
             Show Cohort
             </a>
-            <form action="/posts/<%= cohort.id %>" method="POST">
-                <input type="hidden" name="_method" value="EDIT">
-                <input 
-                    type="submit" 
-                    class="btn btn-outline-primary mr-2"
-                    value="Edit"
-                >
-            </form>
-            <form action="/posts/<%= cohort.id %>" method="POST">
-                <input type="hidden" name="_method" value="DELETE">
-                <input
-                    type="submit"
-                    class="btn btn-outline-primary mr-2"
-                    value="Delete"
-                >   
-            </form>
-            </div>
+
 
         </div>        
     <% } %>

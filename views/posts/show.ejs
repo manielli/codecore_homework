@@ -1,21 +1,34 @@
 <%- include("../partials/header") %>
 
 <div class="card">
-    <div class="card-body mb-2">
+    <div class="card-body">
         <div class="card-title"><%= cohort.name %></div>
         <p class="card-text">
             <%= cohort.members %><br>
         </p>
-
-        <div class="card-body">
-
-        <div>Method</div> <br>
-        <div>Quantity</div> <br>
-        <input>
-        <br>
-        <button type="submit" value="Assign Teams"></button>
-
-
+        <div class="d-flex">
+            <form action="/posts/<%= cohort.id %>" method="POST">
+                <input type="hidden" name="_method" value="EDIT">
+                <input 
+                    type="submit" 
+                    class="btn btn-outline-primary mr-2"
+                    value="Edit"
+                >
+            </form>
+            <form action="/posts/<%= cohort.id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input
+                type="submit"
+                class="btn btn-outline-primary mr-2"
+                value="Delete"
+            >   
+            </form>
+        </div>
+        <div>
+            <div>Method</div>
+            <div>Quantity</div>
+            <input>
+            <a class="btn btn-outline-primary" href="/">Assign Teams</a>
         </div>
     
     </div>
