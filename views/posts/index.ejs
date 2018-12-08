@@ -3,7 +3,9 @@
 <div class="post-cards">
     <% for (let cohort of cohorts) { %> 
         <div class="card mb-4">
-            <div class="card-body">
+            <a class="card-body d-flex">
+                <div>
+
                 <% if (cohort.logo_url) { %> 
                 <img 
                     src="<%= cohort.logo_url %>" 
@@ -11,11 +13,12 @@
                     class="card-img-top"
                 >
                 <% } %>
+                </div>
                 <h5 class="card-title"><%= cohort.name %></h5>
-            </div>
+            </a>
             <p class="card-text"><%= cohort.members %></p>
             <a href="/posts/<%= cohort.id %>" 
-            class="d-flex btn btn-outline-primary mr-2"
+            class="btn btn-outline-primary mr-2"
             >
             Show Cohort
             </a>
