@@ -8,7 +8,7 @@
             type="url"
             class="form-control"
             name="logo_url"
-            placeholder="Enter New Cohort Image URL Here"    
+            placeholder="<%= cohort.logo_url%>"    
         >
     </div>
     <div class="form-group">
@@ -16,7 +16,7 @@
             type="text" 
             class="form-control"
             name="name"
-            placeholder="Enter New Cohort Name Here"
+            placeholder="<%= cohort.name%>"
         >
     </div>
     <div class="form-group">
@@ -24,7 +24,7 @@
             name="members" 
             cols="30" 
             rows="10"
-            placeholder="Enter New Team Members Here"
+            placeholder="<%=cohort.members%>"
         ></textarea>
     </div>
 
