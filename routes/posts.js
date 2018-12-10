@@ -71,4 +71,13 @@ router.patch("/:id", (req, res) => {
         });
 });
 
+router.get("/:id", (req, res) => {
+    knex("cohorts", req.params.id)
+        .where("id", req.params.id)
+        .then(() => {
+            res.redirect(`posts`)
+    });
+
+});
+
 module.exports = router;
