@@ -4,7 +4,7 @@
     <% for (let cohort of cohorts) { %> 
         <div class="card-body">
             <div class="d-flex">
-                <div>
+                <div class="ml-2 mt-2 mr-2 mb-2">
 
                 <% if (cohort.logo_url) { %> 
                 <img 
@@ -16,7 +16,7 @@
                 >
                 <% } %>
                 </div>
-                <h4 class="card-title ml-4"><%= cohort.name %>
+                <h4 class="card-title ml-2 mt-2 mr-2 mb-2"><%= cohort.name %>
                 </h4>
             </div>
             <p class="card-text"><%= cohort.members %></p>

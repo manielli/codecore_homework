@@ -1,13 +1,14 @@
 <%- include("../partials/header") %>
 
-<h4>New Cohort</h4>
-<form action="/posts/new" method="POST">
+<h4 class="ml-2 mt-2 mr-2 mb-2">New Cohort</h4>
+<form action="/posts/new" class="ml-2 mt-2 mr-2 mb-2" method="POST">
     <div class="form-group">
         <input 
             type="url" 
             class="form-control" 
             name="logo_url" 
-            placeholder="http://www.example.com/some.png">
+            placeholder="http://www.example.com/some.png"
+        >
     </div>
     <div class="form-group">
         <input 
@@ -20,6 +21,7 @@
     <div class="form-group">
         <textarea 
             name="members" 
+            class="form-control"
             cols="30" 
             rows="10"
             placeholder="Jon Snow, Daenerys Targaryn, Arya Start"

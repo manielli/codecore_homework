@@ -40,35 +40,35 @@ router.get("/:id", (req, res, next) => {
         });
 });
 
-// router.delete("/:id", (req, res) => {
-//     knex("cohorts")
-//         .where("id", req.params.id)
-//         .del()
-//         then( () => {
-//             res.redirect("/posts");
-//         });
+router.delete("/:id", (req, res) => {
+    knex("cohorts")
+        .where("id", req.params.id)
+        .del()
+        then( () => {
+            res.redirect("/posts");
+        });
 
-// });
+});
 
-// router.get("/:id/edit", (req, res) => {
-//     knex("cohorts")
-//         .where("id", req.params.id)
-//         .first()
-//         .then(cohort => {
-//             res.render("posts/edit", { cohort: cohort});
-//         });
-// });
+router.get("/:id/edit", (req, res) => {
+    knex("cohorts")
+        .where("id", req.params.id)
+        .first()
+        .then(cohort => {
+            res.render("posts/edit", { cohort: cohort});
+        });
+});
 
-// router.patch("/:id", (req, res) => {
-//     knex("cohorts", req.params.id)
-//         .update({
-//             name: req.body.name,
-//             logoUrl: req.body.logo_url,
-//             members: req.body.members
-//         })
-//         .then(() => {
-//             res.redirect(`/posts/${req.params.id}`);
-//         });
-// });
+router.patch("/:id", (req, res) => {
+    knex("cohorts", req.params.id)
+        .update({
+            name: req.body.name,
+            logoUrl: req.body.logo_url,
+            members: req.body.members
+        })
+        .then(() => {
+            res.redirect(`/posts/${req.params.id}`);
+        });
+});
 
 module.exports = router;
