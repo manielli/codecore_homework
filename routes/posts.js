@@ -44,7 +44,7 @@ router.delete("/:id", (req, res) => {
     knex("cohorts")
         .where("id", req.params.id)
         .del()
-        then( () => {
+        .then(() => {
             res.redirect("/posts");
         });
 
