@@ -10,37 +10,31 @@
   </head>
 
   <body>
-  <header>
-    <nav class="navbar bg-light">
-      <a class="navbar-brand">
-        <%= link_to("Blog on Rails", root_path) %>
-      </a>
-      <div>
-        <ul class="navbar-nav">
+    <header>
+      <nav class="navbar bg-light">
+        <a class="navbar-brand" href="/">Blog on Rails</a>
+        <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link">  
-              <%= link_to("Home", root_path) %>
+            <a class="nav-link" href=<%= root_path %>>  
+              Home
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link">
-              <%= link_to("New Post", new_post_path) %>
+            <a class="nav-link" href=<%= new_post_path %> >
+            New Post
             </a>
           </li>
-        </div>
-      </ul>
-    </nav>
-  </header>
+        </ul>
+      </nav>
+    </header>
 
-  <main class="container-fluid">
-    <% flash.each do |type, message| %>
-      <div class="alert alert-<%= type %>" >
-        <%= message %>
-      </div>
-    <% end %>
-    
-    <%= yield %>
-    
-  </main>
+    <main class="container-fluid">
+      <% flash.each do |type, message| %>
+        <div class="alert alert-<%= type %>" >
+          <%= message %>
+        </div>
+      <% end %>
+      <%= yield %>
+    </main>
   </body>
 </html>
