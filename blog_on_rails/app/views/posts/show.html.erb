@@ -12,8 +12,12 @@
         <small>Last Edited: <%= time_ago_in_words(@post.updated_at) %> ago </small>
     </div>
     <div class="card-body">
+        <% if can?(:edit, @post) %>
         <small> <%= link_to("Edit", edit_post_path(@post.id)) %> </small> •
+        <% end %>
+        <% if can?(:delete, @post) %>
         <small> <%= link_to("Delete", post_path(@post.id), method: :delete, data: { confirm: "Are you sure?" }) %> </small>
+        <% end %>
     </div>
 </div>
 
@@ -41,17 +45,19 @@
             <p>
                 <%= comment.body %> <br>
                 •
-                <small>Commented <%= time_ago_in_words(comment.created_at) %> ago</small>
-                <small>
-                    <%= link_to(
-                        "Delete",
-                        post_comment_path(@post.id, comment.id),
-                        method: :delete,
-                        data: {
-                            confirm: "Are you sure?"
-                        }
-                    ) %>
-                </small>
+                <small>Commented by <%= comment.user.full_name %> <%= time_ago_in_words(comment.created_at) %> ago</small>
+                <% if can?(:delete, comment) %>
+                    <small>
+                        <%= link_to(
+                            "Delete",
+                            post_comment_path(@post.id, comment.id),
+                            method: :delete,
+                            data: {
+                                confirm: "Are you sure?"
+                            }
+                        ) %>
+                    </small>
+                <% end %>
             </p>
         </li>
     <% end %>
