@@ -1,4 +1,4 @@
-<div class="form-group m-2">
+<div class="form-group">
     <%= form_with(mode: @post, local: true) do |form| %>
         <% if @post.errors.present? %>
             <div class="form-errors">
@@ -7,18 +7,17 @@
         <% end %>
 
         <div class="card-body m-2">
-            <%= form.label :title %>
-            <%= form.text_field :title, class: "form-control" %>
+            <%= form.label :title %> <br>
+            <%= form.text_field :title, cols: 50, rows: 2, class: "form-control" %>
         </div>
 
         <div class="card-body m-2">
-            <%= form.label :body %>
+            <%= form.label :body %> <br>
             <%= form.text_area :body, cols: 50, rows: 10, class: "form-control" %>
         </div>
 
-        <div class="btn m-2" >
-        
-        <%= form.submit "Post", class: "btn btn-primary text-primary bg-light" %>
+        <div class="ml-5" >
+            <%= form.submit "Create Post", class: "btn btn-primary text-primary bg-light" %>
         </div>
     <% end %>
 </div>
