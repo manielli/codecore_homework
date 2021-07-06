@@ -1,0 +1,52 @@
+<%- include("../partials/header") %>
+
+<div class="card">
+    <div class="card-body">
+        <div class="card-title mb-2 mt-2"><%= cohort.name %></div>
+        <p class="card-text mb-2 mt-2">
+            <%= cohort.members %><br>
+        </p>
+        <div class="d-flex mt-2 mb-2">
+            <div>
+                <a 
+                    href="/posts/<%= cohort.id %>/edit" 
+                    class="btn btn-outline-primary mr-2"
+                >
+                    Edit
+                </a>
+            </div>
+            <form action="/posts/<%= cohort.id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input
+                type="submit"
+                class="btn btn-outline-primary mr-2"
+                value="Delete"
+            >   
+            </form>
+        </div>
+        <form action="/posts/<%= cohort.id %>" method="GET">
+        <div class="mt-2 mb-2">
+            <label for="teamMethod">Method</label>
+            <br>
+            <% const method = [
+                "Team Count",
+                "Number Per Team"
+                ] %>
+            <% for (let option of method ) { %>
+                <input class="ml-2 mt-2 mr-2 mb-2" type="radio" name="teamMethod" id="<%= option %>" value="<%= option %>" <% if (option == method[0]) { %> checked <% } %> >
+                <label class="ml-2 mt-2 mr-2 mb-2" for="<%= option %>"><%= option %></label>
+                <br>
+            <% } %>
+        </div>
+
+        <div class="mb-2 mt-2">Quantity</div>
+        <% const quantity = 2 %>
+        <input class="form-control mb-2 mt-2" name="quantity" id="<%= quantity %>" value="<%= quantity %>">
+        <br>
+        <input type="submit" value="Assign Teams" class="btn btn-outline-primary mb-2 mt-2 form-control">
+        </form>  
+    </div>
+
+</div>
+
+<%- include("../partials/footer") %>
